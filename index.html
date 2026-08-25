@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaraa Academy | IOB Exam Preparation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="toast"></div>
+
+<section id="loginPage" class="login-page">
+  <div class="login-card">
+    <div class="brand-mark">ZA</div>
+    <h1>Zaraa Academy</h1>
+    <p>IOB Exam Preparation Portal</p>
+    <form id="loginForm">
+      <label>Full Name</label>
+      <input id="nameInput" type="text" placeholder="Enter your name" required>
+      <label>Email ID</label>
+      <input id="emailInput" type="email" placeholder="Enter your email" maxlength="100" autocomplete="email" required>
+      <button class="primary-btn" type="submit">Start Learning →</button>
+    </form>
+    <small>Practice • Learn • Improve • Succeed</small>
+  </div>
+</section>
+
+<div id="app" class="app hidden">
+  <aside class="sidebar">
+    <div class="side-brand"><span>ZA</span><div><b>Zaraa</b><small>Academy</small></div></div>
+    <button class="nav active" data-page="dashboard">⌂ <span>Dashboard</span></button>
+    <button class="nav" data-page="questions">▣ <span>Questions & Answers</span></button>
+    <button class="nav" data-page="practice">✓ <span>Practice Test</span></button>
+    <button class="nav" data-page="mock">⏱ <span>Mock Exam</span></button>
+    <button class="nav" data-page="results">▥ <span>My Results</span></button>
+    <div class="side-bottom">
+      <div class="user-mini"><div id="avatar">Z</div><div><b id="sideName">Student</b><small id="sideEmail">email</small></div></div>
+      <button id="logoutBtn" class="logout">Logout</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <button id="menuBtn" class="menu-btn">☰</button>
+        <span class="eyebrow">INDIAN OVERSEAS BANK • EXAM PREP</span>
+        <h2 id="pageTitle">Dashboard</h2>
+      </div>
+      <div class="top-user"><span id="topName">Student</span><div id="topAvatar">S</div></div>
+    </header>
+
+    <section id="dashboard" class="page">
+      <div class="hero">
+        <div><span class="pill">IOB PREPARATION</span><h1>Prepare smarter.<br><em>Perform better.</em></h1><p>Build your fundamentals, practice MCQs and track your progress from one place.</p>
+        <button class="primary-btn" onclick="showPage('practice')">Start Practice Test →</button></div>
+        <div class="hero-art"><div class="ring">IOB</div><div class="float-card">✓ Daily Practice<br><small>Keep improving</small></div></div>
+      </div>
+      <div class="stats">
+        <div><span>📚</span><b id="qCount">0</b><small>Question Bank</small></div>
+        <div><span>✓</span><b id="testCount">0</b><small>Tests Completed</small></div>
+        <div><span>★</span><b id="bestScore">0%</b><small>Best Score</small></div>
+        <div><span>◷</span><b>24/7</b><small>Learn Anytime</small></div>
+      </div>
+      <div class="section-head"><div><span class="eyebrow">PREPARATION</span><h3>Choose a subject</h3></div></div>
+      <div id="subjectGrid" class="subject-grid"></div>
+    </section>
+
+    <section id="questions" class="page hidden">
+      <div class="section-head"><div><span class="eyebrow">LEARN</span><h3>Questions & Answers</h3><p>Study topic-wise questions with answers and explanations.</p></div></div>
+      <div class="filter-row"><input id="searchQ" placeholder="Search questions..."><select id="topicFilter"><option value="all">All Topics</option></select></div>
+      <div id="questionList" class="question-list"></div>
+    </section>
+
+    <section id="practice" class="page hidden">
+      <div id="practiceSetup" class="test-setup">
+        <span class="eyebrow">PRACTICE ARENA</span><h3>Practice Test</h3><p>Select a subject and test length.</p>
+        <div class="setup-options">
+          <label>Subject<select id="practiceTopic"></select></label>
+          <label>Questions<select id="practiceCount"><option>10</option><option>20</option><option>30</option></select></label>
+        </div>
+        <button class="primary-btn" onclick="startTest('practice')">Begin Practice →</button>
+      </div>
+      <div id="testArea" class="hidden"></div>
+    </section>
+
+    <section id="mock" class="page hidden">
+      <div id="mockSetup" class="test-setup mock-card">
+        <span class="eyebrow">EXAM SIMULATOR</span><h3>IOB Full Mock Exam</h3>
+        <p>Mixed questions • 20 questions • 20 minutes • Instant result</p>
+        <ul><li>Questions from all preparation topics</li><li>One attempt with countdown timer</li><li>Detailed answer review after submission</li></ul>
+        <button class="primary-btn" onclick="startTest('mock')">Start Mock Exam →</button>
+      </div>
+      <div id="mockArea" class="hidden"></div>
+    </section>
+
+    <section id="results" class="page hidden">
+      <div class="section-head"><div><span class="eyebrow">YOUR PERFORMANCE</span><h3>My Results</h3><p>Review your recent practice and mock tests.</p></div></div>
+      <div id="resultsList" class="results-list"></div>
+    </section>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
